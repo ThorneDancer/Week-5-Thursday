@@ -1,0 +1,58 @@
+/* =============
+    Header
+============= */
+header {
+    background-color: $white;
+    display: grid;
+    grid-template-areas: "button logo" "nav nav";
+    grid-template-columns: 20% auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    @include large {
+        grid-template-areas: "nav logo";
+        grid-template-columns: 40% auto;
+    }
+
+    section {
+        grid-area: button;
+        padding: 10px;
+        @include large {
+            display: none;
+        }
+
+        button {
+            background-color: $white;
+            border: none;
+            outline: none;
+
+            i {
+                font-size: rem-calc(24);
+            }
+        }
+    }
+
+    aside {
+        grid-area: logo;
+        padding: 10px;
+        text-align: right;
+
+        h1 {
+            color: $tertiary;
+            font-family: 'Satisfy', cursive;
+            font-size: rem-calc(20);
+            font-weight: 400;
+            @include large {
+                font-size: rem-calc(35);
+            }
+        }
+    }
+
+    nav {
+        display: none;
+        grid-area: nav;
+        @include large {
+            display: block !important;
+        }
+    }
+}
