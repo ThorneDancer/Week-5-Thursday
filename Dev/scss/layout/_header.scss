@@ -16,18 +16,39 @@ header {
 
     section {
         grid-area: button;
-        padding: 10px;
+        padding: 15px 0;
         @include large {
             display: none;
         }
 
-        button {
+        #burger-container {
             background-color: $white;
             border: none;
+            cursor: pointer;
+            height: 14px;
             outline: none;
+            position: relative;
+            width: 20px;
 
-            i {
-                font-size: rem-calc(24);
+            div {
+                background-color: $black;
+                height: 3px;
+                margin-bottom: 20px;
+                position: absolute;
+                width: 100%;
+            }
+
+            div:nth-child(1) {
+                top: 0;
+            }
+
+            div:nth-child(2) {
+                top: 7px;
+            }
+
+            div:nth-child(3) {
+                margin: 0;
+                top: 14px;
             }
         }
     }
